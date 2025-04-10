@@ -6,14 +6,14 @@ body * {
 }
 :root {
   --text-color: white;
-  --bg-url: url(./assets/bg-mobile.jpg);
+  --bg-url: url(./assets/dourado.jpg);
   --stroke-color: rgba(255, 255, 255, 0.05);
   --surface-color: rgba(255, 255, 255, 0.5);
   --switch: url(./assets/moon-stars.svg);
 }
 .light {
   --text-color: black;
-  --bg-url: url(./assets/bg-mobile-light.jpg);
+  --bg-url: url(./assets/branco.jpg);
   --stroke-color: rgba(0, 0, 0, 0.05);
   --surface-color: rgba(0, 0, 0, 0.5);
   --switch: url(./assets/sun.svg);
