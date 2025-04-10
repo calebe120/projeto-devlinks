@@ -1,0 +1,131 @@
+body * {
+  font-family: Arial, sans-serif;
+  color: var(--text-color);
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --text-color: white;
+  --bg-url: url(./assets/bg-mobile.jpg);
+  --stroke-color: rgba(255, 255, 255, 0.05);
+  --surface-color: rgba(255, 255, 255, 0.5);
+  --switch: url(./assets/moon-stars.svg);
+}
+.light {
+  --text-color: black;
+  --bg-url: url(./assets/bg-mobile-light.jpg);
+  --stroke-color: rgba(0, 0, 0, 0.05);
+  --surface-color: rgba(0, 0, 0, 0.5);
+  --switch: url(./assets/sun.svg);
+}
+body {
+  background-image: var(--bg-url);
+  background-repeat: no-repeat; /*nao repete a imagem, por padrao ela ja se repete*/
+  background-position: top center; /* centraliza a imagem, por padrao  imagem centraliza do eixo x para cima ficando cortado pela mentade, usa-se o top center pois o topo vira o ponto de centralizaçao*/
+  background-size: cover; /* cover cobre toda a area da tela, container cobre somente a parte do body, para isso deve-se ajustar o tamho do body com width para altura e heigth par largura */
+}
+#container {
+  width: 360px;
+  margin: auto;
+  font-weight: 700;
+  padding: 0 24px;
+}
+#profile {
+  text-align: center; /*centraliza os textos da caixa*/
+  padding: 24px;
+}
+#profile img {
+  width: 112px;
+  
+  
+}
+#switch{
+
+  position: relative;/*quando for manipular o switch ele ira manioular somente dentro da propria caixa*/
+  width: 64px;
+  margin: 4px auto;
+}
+#switch button {
+  width: 32px;
+  height: 32px;
+  background: white;
+  border: 0;
+  border-radius: 50%;
+  background-image: var(--switch);
+  background-repeat: no-repeat;
+  background-position: center;
+
+position: absolute;/*usamos o position apra posicionar os elementos, com isso ele libera outras opçoes como o z-index*/
+top: 50%;
+left: 0;
+z-index: 1;/* o z-index ele fuciona como camadas sendo 0 as camadas se misturam, 1 ele sobrepoe e fica uma camada a cima*/
+
+transform: translateY(-50%);/*usado par mover o elemento no eixo Y*/
+
+}
+.light #switch button{
+  right: 0;
+  left: initial;
+}
+
+#switch span{
+  /* o span por padrao é inline entao tem que transformar em block*/
+  display: block;
+  width: 64px;
+  height: 24px;
+  background: var(--stroke-color);
+  border: 1px solid var(--surface-color);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 9999px;
+}
+
+ul {
+
+  padding: 8px;
+  list-style: none; /* tira os pontos da lsita*/
+  text-align: center; /* centraliza a lista*/
+  display: flex; /* pode ser tanto block ou textual*/
+  flex-direction: column;
+  gap: 16px;
+}
+ul li a {
+  display: flex;
+  align-items: flex; /*alinha o texto no centro*/
+  justify-content: center; /*alinha a caixa no centro*/
+  padding: 16px 24px;
+  background: var(--stroke-color); /* rgba é red,gren,blue e alfa 255 é a cor maxima, 0.1 é a trasnparencia da cor*/
+  border: 1px solid var(--surface-color); /*faz  mesma coisa que o backgroud, porem na borda*/
+  border-radius: 8px; /* adiciona o tamanho do raio da borda*/
+  -webkit-backdrop-filter: blur (4px); /*adiciona um filtro a caixa exemplo é o blur que deixa embaçado*/
+  text-decoration: none; /*retira as linhas dos links ou adicona linhas em resumo ele decora o texto */
+  font-weight: 700; /* aumenta a grossura da letra*/
+
+  transition: background 0.5s;
+}
+/*pseudo-selector*/
+ul li a:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1.5px solid var(--text-color);
+  
+  
+}
+#social-links {
+  padding: 24px;
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+#social-links :hover {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  
+
+}
+
+p {
+  display: flex;
+  justify-content: center;
+  padding: 12px;
+}
